@@ -1,6 +1,15 @@
+/* ============================================
+   GLOBAL STYLES - applies to entire app
+   ============================================ */
+
+/* Import Poppins font */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Body - dark gradient background */
+
+

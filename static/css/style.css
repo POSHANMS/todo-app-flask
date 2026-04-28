@@ -60,7 +60,7 @@ body {
 
 /* Purple circle with icon */
 .auth-icon {
-    width: 70;
+    width: 70px;
     height: 70px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 50%;
@@ -85,4 +85,43 @@ body {
 .auth-header p {
     color: #718096;
     font-size: 14px;
+}
+
+/* Form labels */
+.form-label {
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+/* Input boxes */
+.form-control {
+    border: 2px soild #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Input box when clicked/focused */
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Icon box on left of input */
+.input-group-text {
+    background: #f7fafc;
+    border: 2px soild #e2e8f0;
+    color: #667eea;
+}
+
+/* Eye icon - show/hide password */
+.toggle-password {
+    cursor: pointer;
+}
+
+.toggle-password:hover {
+    background: #667eea;
+    color: white;
 }

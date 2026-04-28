@@ -28,3 +28,14 @@ body {
     justify-content: center;
     padding: 20px;
 }
+
+/* The white card/box */
+.auth-wrapper {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s ease;
+}

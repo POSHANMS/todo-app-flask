@@ -147,3 +147,21 @@ body {
 .login-btn:active {
     transform: translateY(0px);
 }
+
+/* Bottom link section */
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #718096;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

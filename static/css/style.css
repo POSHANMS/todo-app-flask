@@ -30,7 +30,7 @@ body {
 }
 
 /* The white card/box */
-.auth-wrapper {
+.auth-card {
     background: white;
     border-radius: 20px;
     padding: 40px;
@@ -96,7 +96,7 @@ body {
 
 /* Input boxes */
 .form-control {
-    border: 2px soild #e2e8f0;
+    border: 2px solid #e2e8f0;
     border-radius: 10px;
     padding: 10px 15px;
     font-size: 14px;

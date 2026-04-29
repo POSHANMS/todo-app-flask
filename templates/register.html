@@ -109,6 +109,33 @@
               </span>
             </div>
           </div>
+
+          <!-- Confirm Password input -->
+          <div class="form-group mb-3">
+            <label class="form-label">Confirm Password</label>
+            <div class="input-group">
+              <!-- Shield icon on left -->
+              <span class="input-group-text">
+                <i class="fas fa-shield-alt"></i>
+              </span>
+              <!-- Confirm password input -->
+              <input
+                type="password"
+                name="confirm_password"
+                id="confirmpassword"
+                class="form-control"
+                placeholder="Re-enter your password"
+                required
+              />
+              <!-- Eye icon to show/hide confirm password -->
+              <span
+                class="input-group-text toggle-password"
+                onclick="toggleConfirmPassword()"
+              >
+                <i class="fas fa-eye" id="eyeIcon2"></i>
+              </span>
+            </div>
+          </div>
         </form>
       </div>
     </div>

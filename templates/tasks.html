@@ -156,6 +156,45 @@
               Completed
               <span class="badge bg-success">{{ completed_tasks }}</span>
             </div>
+
+            <!-- Completed tasks list -->
+            { % if completed_tasks == 0 % }
+
+            <!-- Empty state - no completed tasks yet -->
+            <div class="empty-state">
+              <i class="fas fa-trophy"></i>
+              <p>No completed tasks yet!</p>
+              <p>Complete a task to see it here</p>
+            </div>
+            {% else %}
+
+            <!-- Loop through each completed task -->
+            {% for task in tasks %} {% if task.completed == 1 %}
+
+            <!-- Single completed task card -->
+            <div class="task-completed" id="task-{{ task.id }}">
+              <!-- Checkbox circle - already checked -->
+              <div
+                class="task-checkbox checked"
+                onclick="toggleTask({{ task.id }})"
+              >
+                <i class="fas fa-check"></i>
+              </div>
+
+              <!-- Task text - strikethrough -->
+              <div class="task-content">
+                <div class="task-title">{{ task.title }}</div>
+                <div class="task-description">{{ task.description }}</div>
+              </div>
+
+              <!-- Only delete button - no edit for completed -->
+              <div class="task-actions">
+                <button class="btn-delete" onclick="deleteTask({{ task.id }})">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            {% endif %} {% endfor %} {% endif %}
           </div>
         </div>
       </div>

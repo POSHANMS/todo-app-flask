@@ -105,6 +105,47 @@
                 >{{ pending_tasks }}</span
               >
             </div>
+            <!-- Pending tasks list -->
+            {% if pending_tasks == 0 %}
+            <!-- Empty state - no pending tasks -->
+            <div class="empty-state">
+              <i class="fas fa-clipboard-check"></i>
+              <p>No pending tasks!</p>
+              <p>Click "Add task" to get started</p>
+            </div>
+
+            {% else %}
+            <!-- Loop through each pending task -->
+            {% for task in tasks %} {% if task.completed == 0 %}
+
+            <!-- Single task card -->
+            <div class="task-card" id="task-{{ task.id }}">
+              <!-- Checkbox circle -->
+              <div class="task-checkbox" onclick="toggleTask({{ task.id }})">
+                <i class="fas fa-check"></i>
+              </div>
+
+              <!-- Task text -->
+              <div class="task-content">
+                <div class="task-title">{{ task.title }}</div>
+                <div class="task-description">{{ task.description }}</div>
+              </div>
+
+              <!-- Edit and delete buttons -->
+              <div class="task-actions">
+                <button
+                  class="btn-edit"
+                  onclick="editTask({{ task.id }}, '{{ task.title }}', '{{ task.description }}')"
+                >
+                  <i class="fas fa-edit"></i>
+                </button>
+
+                <button class="btn-delete" onclick="deleteTask({{ task.id }})">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            {% endif %} {% endfor %} {% endif %}
           </div>
 
           <!-- Right side - Completed tasks -->

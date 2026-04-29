@@ -48,6 +48,31 @@
           </div>
         </div>
       </nav>
+
+      <!-- Stats bar - shows task counts -->
+      <div class="stats-bar">
+        <div class="container">
+          <div class="row text-center">
+            <!-- Total tasks count -->
+            <div class="col-4 stat-item">
+              <div class="stat-number">{{ total_tasks }}</div>
+              <div class="stat-label">Total Tasks</div>
+            </div>
+
+            <!-- Pending tasks count -->
+            <div class="col-4 stat-item">
+              <div class="stat-number">{{ pending_tasks }}</div>
+              <div class="stat-label">Pending</div>
+            </div>
+
+            <!-- Completed tasks count -->
+            <div class="col-4 stat-item">
+              <div class="stat-number">{{ completed_tasks }}</div>
+              <div class="stat-label">Completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

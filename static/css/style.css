@@ -225,3 +225,26 @@ body {
     color: #718096;
     font-weight: 500;
 }
+
+/* ============================================
+   ADD TASK BUTTON
+   ============================================ */
+
+/* Purple gradient button */
+.btn-add-task {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Lifts up on hover */
+.btn-add-task:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    color: white;
+}

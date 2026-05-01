@@ -110,3 +110,35 @@ function editTask(taskId, taskTitle, taskDescription) {
     const modal = new bootstrap.Modal(document.getElementById('taskModal'));
     modal.show();
 }
+
+// ============================================
+// DELETE TASK - delete a task with confirmation
+// ============================================
+
+function deleteTask(taskId) {
+
+    // Step 1 - Ask user to confirm deletion
+    const confirmed = confirm('Are you sure you want to delete this task?');
+
+    // Step 2 - Only delete if user clicked OK
+    if (confirmed) {
+
+        // Send delete request to Flask
+        fetch('delete-task/' + taskId, {
+            method: 'POST',
+        })
+
+        // When Flask responds, reload the page
+        .then(function(response) {
+            if (response.ok) {
+                // Remove task card from page instantly
+                document.getElementById('task-' + taskId).remove();
+            }
+         })
+
+         // If something goes wrong, show error
+         .catch(function(error) {
+            console.error('Error deleting task:', error);
+         });
+    }
+}

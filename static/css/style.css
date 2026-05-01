@@ -367,3 +367,53 @@ body {
     background: #fc8181;
     color: white;
 }
+
+/* ============================================
+   TASK CHECKBOX - circle checkbox
+   ============================================ */
+
+/* Circle checkbox */
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #667eea;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    color: transparent;
+}
+
+/* Checkbox on hover */
+.task-checkbox:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Checked state - completed task */
+.task-checkbox.checked {
+    background: #48bb78;
+    border-color: #48bb78;
+    color: white;
+}
+
+/* ============================================
+   EMPTY STATE - when no tasks
+   ============================================ */
+
+/* Empty state container */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #a0aec0;
+}
+
+/* Big icon */
+.empty-state i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}

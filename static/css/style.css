@@ -186,11 +186,42 @@ body {
 
 /* Space between logo icon and text */
 .nav-link {
-    color: rgb(255, 255, 255, 0.85) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
     font-weight: 500;
 }
 
 /* Nav links on hover */
 .nav-link:hover {
     color: white !important;
+}
+
+/* ============================================
+   STATS BAR - shows task counts
+   ============================================ */
+
+/* White bar below navbar */
+.stats-bar {
+    background: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Each stat item - total, pending, completed */
+.stat-item {
+    text-align: center;
+}
+
+/* The big number */
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+/* The label below number */
+.stat-label {
+    font-size: 13px;
+    color: #718096;
+    font-weight: 500;
 }

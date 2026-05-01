@@ -167,6 +167,16 @@ body {
 }
 
 /* ============================================
+   TASKS WRAPPER - main page background
+   ============================================ */
+
+.tasks-wrapper {
+    min-height: 100vh;
+    background: #f0f2f5;
+    padding-bottom: 50px;
+}
+
+/* ============================================
    NAVBAR - top navigation bar
    ============================================ */
 

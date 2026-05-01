@@ -417,3 +417,62 @@ body {
     margin-bottom: 15px;
     display: block;
 }
+
+/* ============================================
+   MODAL - popup for adding/editing tasks
+   ============================================ */
+
+/* Modal box itself */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal header - purple gradient */
+.modal-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 25px;
+}
+
+/* Modal title text */
+.model-title {
+    font-weight: 700;
+}
+
+/* Make close X button white */
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
+/* Modal body padding */
+.modal-body {
+    padding: 25px;
+}
+
+/* Modal footer */
+.modal-footer {
+    padding: 15px 25px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Save button */
+.btn-save {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Save button hover */
+.btn-save:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}

@@ -60,3 +60,28 @@ function toggleConfirmPassword() {
         eyeIcon2.classList.add('fa-eye');
     }
 }
+
+// ============================================
+// TOGGLE TASK - mark task complete/incomplete
+// ============================================
+
+function toggleTask(taskId) {
+
+    // Send request to Flask to toggle this task
+    fetch('/toggle-task/' + taskId, {
+        method: 'POST',
+    })
+
+    // When Flask responds, reload the page
+    .then(function(response) {
+        if (response.ok) {
+            // Reload page to show updated task status
+            window.location.reload();
+        }
+    })
+
+    // If something goes wrong, show error
+    .catch(function(error) {
+        console.error('Error toggling task:', error);
+    });
+}

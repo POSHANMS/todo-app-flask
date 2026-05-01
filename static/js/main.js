@@ -85,3 +85,28 @@ function toggleTask(taskId) {
         console.error('Error toggling task:', error);
     });
 }
+
+// ============================================
+// EDIT TASK - open modal with existing data
+// ============================================
+
+function editTask(taskId, taskTitle, taskDescription) {
+
+    // Step 1 - Change modal title to "Edit Task"
+    document.getElementById('modalTitle').innerHTML =
+    '<i class="fas fa-edit me-2"></i>Edit Task';
+
+    // Step 2 - Fill in the existing task data
+    document.getElementById('taskTitle').value = taskTitle;
+    document.getElementById('taskDescription').value = taskDescription;
+
+    // Step 3 - Store the task id in hidden input
+    document.getElementById('taskId').value = taskId;
+
+    // Step 4 - Change action to "edit"
+    document.getElementById('taskAction').value = 'edit';
+
+    // Step 5 - Open the modal
+    const modal = new bootstrap.Modal(document.getElementById('taskModal'));
+    modal.show();
+}

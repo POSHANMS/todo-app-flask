@@ -248,3 +248,24 @@ body {
     box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
     color: white;
 }
+
+/* ============================================
+   SECTION TITLES - Pending and Completed
+   ============================================ */
+
+/* Section title row - icon + text + badge */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* The count badge next to title */
+.section-title .badge {
+    font-size: 12px;
+    padding: 4px 10px;
+}

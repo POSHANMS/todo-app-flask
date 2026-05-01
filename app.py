@@ -19,7 +19,8 @@ def tasks():
                            total_tasks=0,
                            pending_tasks=0,
                            completed_tasks=0,
-                           task=[]
+                           task=[],
+                           current_user={'name': 'Test User'}
                            )
 
 if __name__ == '__main__':

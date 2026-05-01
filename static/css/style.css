@@ -165,3 +165,32 @@ body {
 .auth-footer a:hover {
     text-decoration: underline;
 }
+
+/* ============================================
+   NAVBAR - top navigation bar
+   ============================================ */
+
+/* Main navbar - purple gradient */
+.navrbar {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo text on left */
+.navrbar-brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: white !important;
+}
+
+/* Space between logo icon and text */
+.nav-link {
+    color: rgb(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+}
+
+/* Nav links on hover */
+.nav-link:hover {
+    color: white !important;
+}

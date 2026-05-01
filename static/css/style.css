@@ -171,17 +171,21 @@ body {
    ============================================ */
 
 /* Main navbar - purple gradient */
-.navrbar {
+.navbar {
     background: linear-gradient(135deg, #667eea, #764ba2) !important;
     padding: 15px 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo text on left */
-.navrbar-brand {
+.navbar-brand {
     font-size: 22px;
     font-weight: 700;
     color: white !important;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
 }
 
 /* Space between logo icon and text */
@@ -204,7 +208,7 @@ body {
     background: white;
     padding: 20px 0;
     margin-bottom: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Each stat item - total, pending, completed */
@@ -438,7 +442,7 @@ body {
 }
 
 /* Modal title text */
-.model-title {
+.modal-title {
     font-weight: 700;
 }
 

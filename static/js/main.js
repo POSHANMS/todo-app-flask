@@ -124,7 +124,7 @@ function deleteTask(taskId) {
     if (confirmed) {
 
         // Send delete request to Flask
-        fetch('delete-task/' + taskId, {
+        fetch('/delete-task/' + taskId, {
             method: 'POST',
         })
 

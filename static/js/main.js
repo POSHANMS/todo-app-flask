@@ -3,13 +3,14 @@
 // ============================================
 
 function togglePassword() {
-    // Step 1 - Find the password input box using its id
+
+    // Find the password input box using its id
     const passwordInput = document.getElementById('password');
 
-    // Step 2 - Find the eye icon using its id
+    // Find the eye icon using its id
     const eyeIcon = document.getElementById('eyeIcon');
 
-    // Step 3 - Chech current type and switch it
+    // Check current type and switch it
     if (passwordInput.type === 'password') {
 
         // Currently hidden - make it visible
@@ -18,6 +19,7 @@ function togglePassword() {
         // Change eye icon to crossed out eye
         eyeIcon.classList.remove('fa-eye');
         eyeIcon.classList.add('fa-eye-slash');
+
     } else {
 
         // Currently visible - hide it again
@@ -34,22 +36,23 @@ function togglePassword() {
 // ============================================
 
 function toggleConfirmPassword() {
-    
-    // Step 1 - Find the confirm password input using its id
+
+    // Find the confirm password input using its id
     const confirmInput = document.getElementById('confirmPassword');
-    
-    // Step 2 - Find the second eye icon using its id
+
+    // Find the second eye icon using its id
     const eyeIcon2 = document.getElementById('eyeIcon2');
-    
-    // Step 3 - Check current type and switch it
+
+    // Check current type and switch it
     if (confirmInput.type === 'password') {
 
         // Currently hidden - make it visible
         confirmInput.type = 'text';
 
         // Change eye icon to crossed out eye
-        eyeIcon2.classList.remove('fa-eye')
+        eyeIcon2.classList.remove('fa-eye');
         eyeIcon2.classList.add('fa-eye-slash');
+
     } else {
 
         // Currently visible - hide it again
@@ -92,21 +95,21 @@ function toggleTask(taskId) {
 
 function editTask(taskId, taskTitle, taskDescription) {
 
-    // Step 1 - Change modal title to "Edit Task"
+    // Change modal title to "Edit Task"
     document.getElementById('modalTitle').innerHTML =
-    '<i class="fas fa-edit me-2"></i>Edit Task';
+        '<i class="fas fa-edit me-2"></i>Edit Task';
 
-    // Step 2 - Fill in the existing task data
+    // Fill in the existing task data
     document.getElementById('taskTitle').value = taskTitle;
     document.getElementById('taskDescription').value = taskDescription;
 
-    // Step 3 - Store the task id in hidden input
+    // Store the task id in hidden input
     document.getElementById('taskId').value = taskId;
 
-    // Step 4 - Change action to "edit"
+    // Change action to "edit"
     document.getElementById('taskAction').value = 'edit';
 
-    // Step 5 - Open the modal
+    // Open the modal
     const modal = new bootstrap.Modal(document.getElementById('taskModal'));
     modal.show();
 }
@@ -117,10 +120,10 @@ function editTask(taskId, taskTitle, taskDescription) {
 
 function deleteTask(taskId) {
 
-    // Step 1 - Ask user to confirm deletion
+    // Ask user to confirm deletion
     const confirmed = confirm('Are you sure you want to delete this task?');
 
-    // Step 2 - Only delete if user clicked OK
+    // Only delete if user clicked OK
     if (confirmed) {
 
         // Send delete request to Flask
@@ -128,17 +131,49 @@ function deleteTask(taskId) {
             method: 'POST',
         })
 
-        // When Flask responds, reload the page
+        // When Flask responds, remove card and update stats
         .then(function(response) {
             if (response.ok) {
                 // Remove task card from page instantly
                 document.getElementById('task-' + taskId).remove();
-            }
-         })
 
-         // If something goes wrong, show error
-         .catch(function(error) {
+                // Update stats immediately
+                updateStats();
+            }
+        })
+
+        // If something goes wrong, show error
+        .catch(function(error) {
             console.error('Error deleting task:', error);
-         });
+        });
     }
+}
+
+// ============================================
+// UPDATE STATS - recalculate task counts
+// ============================================
+
+function updateStats() {
+
+    // Count all pending task cards on page
+    const pendingCards = document.querySelectorAll('.task-card:not(.completed)');
+    const pendingCount = pendingCards.length;
+
+    // Count all completed task cards on page
+    const completedCards = document.querySelectorAll('.task-card.completed');
+    const completedCount = completedCards.length;
+
+    // Calculate total
+    const totalCount = pendingCount + completedCount;
+
+    // Update all three stat numbers
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers[0].textContent = totalCount;
+    statNumbers[1].textContent = pendingCount;
+    statNumbers[2].textContent = completedCount;
+
+    // Update section badges
+    const badges = document.querySelectorAll('.section-title .badge');
+    badges[0].textContent = pendingCount;
+    badges[1].textContent = completedCount;
 }

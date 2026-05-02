@@ -490,3 +490,56 @@ body {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
     color: white;
 }
+
+/* ============================================
+   DARK MODE - overrides light mode styles
+   ============================================ */
+
+body.dark-mode {
+    background: #1a1a2e;
+}
+
+body.dark-mode .auth-card,
+body.dark-mode .task-card,
+body.dark-mode .stats-bar,
+body.dark-mode .modal-content {
+    background: #16213e;
+    color: #e2e8f0;
+}
+
+body.dark-mode .tasks-wrapper {
+    background: #1a1a2e;
+}
+
+body.dark-mode .task-title,
+body.dark-mode .auth-header h2,
+body.dark-mode .section-title {
+    color: #e2e8f0;
+}
+
+body.dark-mode .task-description,
+body.dark-mode .auth-header p,
+body.dark-mode .stat-label {
+    color: #a0aec0;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .input-group-text {
+    background: #0f3460;
+    border-color: #2d3748;
+    color: #e2e8f0;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #718096;
+}
+
+body.dark-mode .modal-body,
+body.dark-mode .modal-footer {
+    background: #16213e;
+    color: #e2e8f0;
+}
+
+body.dark-mode .empty-state {
+    color: #4a5568;
+}

@@ -177,3 +177,61 @@ function updateStats() {
     badges[0].textContent = pendingCount;
     badges[1].textContent = completedCount;
 }
+
+// ============================================
+// DARK MODE - toggle dark/light mode
+// ============================================
+
+function toggleDarkMode() {
+
+    // Find the body element
+    const body = document.body;
+
+    // Find the icon inside the button
+    const icon = document.getElementById('darkModeIcon');
+
+    // Toggle dark-mode class on body
+    body.classList.toggle('dark-mode');
+
+    // Check if dark mode is now on or off
+    if (body.classList.contains('dark-mode')) {
+
+        // Dark mode is ON
+        // Change moon icon to sun
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+
+        // Save preference in browser
+        localStorage.setItem('darkMode', 'enabled');
+
+    } else {
+
+        // Dark mode is OFF
+        // Change sun icon back to moon
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+
+        // Save preference in browser
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}
+
+// ============================================
+// REMEMBER DARK MODE - runs when page loads
+// ============================================
+
+// Check if user had dark mode on before
+const savedDarkMode = localStorage.getItem('darkMode');
+
+if (savedDarkMode === 'enabled') {
+
+    // Turn on dark mode automatically
+    document.body.classList.add('dark-mode');
+
+    // Change icon to sun
+    const icon = document.getElementById('darkModeIcon');
+    if (icon) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+}

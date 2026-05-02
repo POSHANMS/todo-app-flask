@@ -40,6 +40,15 @@
               {{ current_user.name }}
             </span>
 
+            <!-- Dark mode toggle button -->
+            <button
+              class="btn btn-light btn-sm"
+              onclick="toggleDarkMode()"
+              id="darkModeBtn"
+            >
+              <i class="fas fa-moon" id="darkModeIcon"></i>
+            </button>
+
             <!-- Logout button -->
             <a href="/logout" class="btn btn-light btn-sm">
               <i class="fas fa-sign-out-alt me-1"></i>
